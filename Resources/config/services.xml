@@ -12,6 +12,7 @@
 
         <service id="dompdf" class="Prezent\DompdfBundle\Wrapper\DompdfWrapper">
             <argument>%prezent_dompdf.config_location%</argument>
+            <argument type="service" id="templating" />
         </service>
 
     </services>
