@@ -21,6 +21,12 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('prezent_dompdf');
 
+        $rootNode
+            ->children()
+                ->scalarNode('config_location')
+            ->end()
+        ;
+
         return $treeBuilder;
     }
 }
