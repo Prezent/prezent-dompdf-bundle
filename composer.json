@@ -1,32 +1,35 @@
 {
-    "name": "prezent/dompdf-bundle",
-    "type": "symfony-bundle",
-    "description": "Integrates the DOMPDF library into a Symfony2 application",
-    "keywords": ["DOMPDF", "pdf", "symfony", "bundle"],
-    "homepage": "http://www.prezent.nl",
-    "require": {
-        "php": "~5.5",
-        "dompdf/dompdf": "~0.6",
-        "symfony/framework-bundle": "~2.3",
-        "symfony/twig-bundle": "~2.3"
+  "name": "prezent/dompdf-bundle",
+  "type": "symfony-bundle",
+  "description": "Integrates the DOMPDF library into a Symfony2 application",
+  "keywords": ["DOMPDF", "pdf", "symfony", "bundle"],
+  "homepage": "http://www.prezent.nl",
+  "require": {
+    "php": "~5.5",
+    "dompdf/dompdf": "~0.6",
+    "symfony/framework-bundle": "~2.3",
+    "symfony/twig-bundle": "~2.3"
+  },
+  "suggest": {
+    "symfony/twig-bundle": "To render a PDF using a Twig template"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robert-Jan Bijl",
+      "email": "robert-jan@prezent.nl"
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Robert-Jan Bijl",
-            "email": "robert-jan@prezent.nl"
-        },
-        {
-            "name": "Prezent Internet B.V.",
-            "email": "github@prezent.nl"
-        }
-    ],
-    "autoload": {
-        "psr-4": { "Prezent\\DompdfBundle\\": "" }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
+    {
+      "name": "Prezent Internet B.V.",
+      "email": "github@prezent.nl"
     }
+  ],
+  "autoload": {
+    "psr-4": { "Prezent\\DompdfBundle\\": "" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
 }
