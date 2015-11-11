@@ -91,25 +91,13 @@ class DompdfWrapper
      */
     public function createFromTemplate($template, array $data = [], $orientation = 'portrait', $paperSize = null)
     {
-        $this->initializeConfig();
-
         // check if the template exists and is readable
         if (!$this->renderer->exists($template)) {
             throw new \RuntimeException('Template "%s" does not exist', $template);
         }
         $html = $this->renderer->render($template, $data);
 
-        if (null === $paperSize) {
-            $paperSize = DOMPDF_DEFAULT_PAPER_SIZE;
-        }
-
-        $this->pdf = new \DOMPDF();
-        $this->pdf->set_paper($paperSize, $orientation);
-        $this->pdf->load_html($html);
-
-        $this->pdf->render();
-
-        return true;
+        return $this->createFromHtml($html, $orientation, $paperSize);
     }
 
     /**
