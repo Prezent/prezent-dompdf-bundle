@@ -5,7 +5,7 @@ namespace Prezent\DompdfBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Grid bundle
+ * DOMPDF bundle
  *
  * @see Bundle
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
