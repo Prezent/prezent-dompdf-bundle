@@ -1,6 +1,6 @@
 # prezent/dompdf-bundle
 
-Integrates [DOMPDF](https://github.com/dompdf/dompdf) into a Symfony2 project.
+Integrates [Dompdf](https://github.com/dompdf/dompdf) into a Symfony2 project.
 
 ## Installation
 This bundle can be installed using Composer. Tell composer to install the extension:
@@ -25,7 +25,7 @@ public function registerBundles()
 ```
 
 After this, copy the file ```Resources/files/dompdf_config.inc.php``` to the ```app/config``` directory of your project.
-Change the setting to suit your specific configuration. You can also change the default DOMPDF settings in this file.
+Change the setting to suit your specific configuration. You can also change the default Dompdf settings in this file.
 
 ## Configuration
 You can set a custom location for the configuration file:

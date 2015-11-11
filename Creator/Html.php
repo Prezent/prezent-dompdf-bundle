@@ -27,10 +27,8 @@ class Html extends Creator implements CreatorInterface
             $this->paperSize = DOMPDF_DEFAULT_PAPER_SIZE;
         }
 
-        $this->pdf = new \DOMPDF();
-
-        $this->pdf->set_paper($this->paperSize, $this->orientation);
-        $this->pdf->load_html($this->html);
+        $this->pdf->setPaper($this->paperSize, $this->orientation);
+        $this->pdf->loadHtml($this->html);
         $this->pdf->render();
 
         return true;

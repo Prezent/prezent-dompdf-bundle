@@ -2,15 +2,17 @@
 
 namespace Prezent\DompdfBundle\Creator;
 
+use Dompdf\Dompdf;
+
 /**
- * Abstract creator class. Initializes the DOMPDF instance
+ * Abstract creator class. Initializes the Dompdf instance
  *
  * @author Robert-Jan Bijl<robert-jan@prezent.nl>
  */
 abstract class Creator implements CreatorInterface
 {
     /**
-     * @var \DOMPDF
+     * @var Dompdf
      */
     protected $pdf;
 
@@ -60,7 +62,8 @@ abstract class Creator implements CreatorInterface
             throw new \RuntimeException(sprintf('Could not find config file "%s"', $this->configFile));
         }
 
-        $this->pdf = new \DOMPDF();
+        $this->pdf = new Dompdf();
+
         return true;
     }
 
