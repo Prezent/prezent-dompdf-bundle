@@ -9,7 +9,7 @@ use Symfony\Bridge\Twig\TwigEngine;
  *
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class Twig extends Html
+class Twig extends Html implements CreatorInterface
 {
     /**
      * @var TwigEngine

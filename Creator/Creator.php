@@ -7,7 +7,7 @@ namespace Prezent\DompdfBundle\Creator;
  *
  * @author Robert-Jan Bijl<robert-jan@prezent.nl>
  */
-abstract class Creator
+abstract class Creator implements CreatorInterface
 {
     /**
      * @var \DOMPDF
@@ -65,9 +65,7 @@ abstract class Creator
     }
 
     /**
-     * Render the PDF document
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     abstract public function render();
 

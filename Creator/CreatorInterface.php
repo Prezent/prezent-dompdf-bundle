@@ -10,6 +10,13 @@ namespace Prezent\DompdfBundle\Creator;
 interface CreatorInterface
 {
     /**
+     * Render the PDF document
+     *
+     * @return bool
+     */
+    public function render();
+
+    /**
      * Stream the pdf document
      *
      * @param  string $fileName The name of the document

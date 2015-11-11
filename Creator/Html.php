@@ -7,7 +7,7 @@ namespace Prezent\DompdfBundle\Creator;
  *
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class Html extends Creator
+class Html extends Creator implements CreatorInterface
 {
     /**
      * @var string
