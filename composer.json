@@ -6,7 +6,7 @@
   "homepage": "http://www.prezent.nl",
   "require": {
     "php": "~5.5",
-    "dompdf/dompdf": "~0.6",
+    "dompdf/dompdf": "~0.7|0.7.0-beta2",
     "symfony/framework-bundle": "~2.3"
   },
   "suggest": {
