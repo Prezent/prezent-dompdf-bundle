@@ -1,6 +1,6 @@
 # loungeroom/dompdf-bundle
 
-Integrates [Dompdf](https://github.com/dompdf/dompdf) into a Symfony2 project, forked from [prezent/dompdf-bundle]((https://github.com/Prezent/prezent-dompdf-bundle)).
+Integrates [Dompdf](https://github.com/dompdf/dompdf) into a Symfony2 project, forked from [prezent/dompdf-bundle](https://github.com/Prezent/prezent-dompdf-bundle).
 
 ## Note
 If you're looking to use **DomPDF 0.6.2** or older, see the [dompdf-bundle by Prezent](https://github.com/Prezent/prezent-dompdf-bundle). 
