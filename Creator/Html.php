@@ -24,9 +24,7 @@ class Html extends Creator implements CreatorInterface
             throw new \RuntimeException('You need to set the HTML, before rendering a PDF');
         }
 
-        $this->pdf = new Dompdf();
-        $this->pdf->setPaper($this->paperSize, $this->orientation);
-        //$this->pdf->
+        $this->pdf->setPaper($this->getPaperSize(), $this->getOrientation());
         $this->pdf->loadHtml($this->html);
         $this->pdf->render();
 

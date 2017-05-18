@@ -3,6 +3,7 @@
 namespace Prezent\DompdfBundle\Creator;
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 /**
  * Abstract creator class. Initializes the Dompdf instance
@@ -15,6 +16,11 @@ abstract class Creator implements CreatorInterface
      * @var Dompdf
      */
     protected $pdf;
+
+    /**
+     * @var Options
+     */
+    protected $options;
 
     /**
      * @var string
@@ -38,11 +44,6 @@ abstract class Creator implements CreatorInterface
      */
     public function __construct()
     {
-        // legacy 0.6.2 support
-        if (defined('DOMPDF_DEFAULT_PAPER_SIZE')) {
-            $this->paperSize = DOMPDF_DEFAULT_PAPER_SIZE;
-        }
-
     }
 
     /**
@@ -53,6 +54,48 @@ abstract class Creator implements CreatorInterface
     public function initialize()
     {
         $this->pdf = new Dompdf();
+        $this->options = $this->pdf->getOptions();
+
+        // legacy 0.6.2 support, WARNING: not all old properties are supported
+        if (defined('DOMPDF_CHROOT')) {
+            $this->options->setChroot(DOMPDF_CHROOT);
+        }
+        if (defined('DOMPDF_DIR')) {
+            $this->options->setRootDir(DOMPDF_DIR);
+        }
+        if (defined('DOMPDF_TEMP_DIR')) {
+            $this->options->setTempDir(DOMPDF_TEMP_DIR);
+        }
+        if (defined('DOMPDF_FONT_DIR')) {
+            $this->options->setFontDir(DOMPDF_FONT_DIR);
+        }
+        if (defined('DOMPDF_FONT_CACHE')) {
+            $this->options->setFontCache(DOMPDF_FONT_CACHE);
+        }
+        if (defined('DOMPDF_LOG_OUTPUT_FILE')) {
+            $this->options->setLogOutputFile(DOMPDF_LOG_OUTPUT_FILE);
+        }
+        if (defined('DOMPDF_DPI')) {
+            $this->options->setDpi(DOMPDF_DPI);
+        }
+        if (defined('DOMPDF_DEFAULT_PAPER_SIZE')) {
+            $this->options->setDefaultPaperSize(DOMPDF_DEFAULT_PAPER_SIZE);
+        }
+        if (defined('DOMPDF_DEFAULT_PAPER_SIZE')) {
+            $this->options->setDefaultPaperOrientation(DOMPDF_DEFAULT_PAPER_SIZE);
+        }
+        if (defined('DOMPDF_ENABLE_REMOTE')) {
+            $this->options->setIsRemoteEnabled(DOMPDF_ENABLE_REMOTE);
+        }
+        if (defined('DOMPDF_ENABLE_PHP')) {
+            $this->options->setIsPhpEnabled(DOMPDF_ENABLE_PHP);
+        }
+        if (defined('DOMPDF_DEFAULT_FONT')) {
+            $this->options->setDefaultFont(DOMPDF_DEFAULT_FONT);
+        }
+        if (defined('DOMPDF_FONT_HEIGHT_RATIO')) {
+            $this->options->setFontHeightRatio(DOMPDF_FONT_HEIGHT_RATIO);
+        }
         return true;
     }
 
@@ -98,7 +141,7 @@ abstract class Creator implements CreatorInterface
      */
     public function getOrientation()
     {
-        return $this->orientation;
+        return $this->options->getDefaultPaperOrientation();
     }
 
     /**
@@ -109,7 +152,7 @@ abstract class Creator implements CreatorInterface
      */
     public function setOrientation($orientation)
     {
-        $this->orientation = $orientation;
+        $this->options->setDefaultPaperOrientation($orientation);
         return $this;
     }
 
@@ -120,7 +163,7 @@ abstract class Creator implements CreatorInterface
      */
     public function getPaperSize()
     {
-        return $this->paperSize;
+        return $this->options->getDefaultPaperSize();
     }
 
     /**
@@ -131,7 +174,7 @@ abstract class Creator implements CreatorInterface
      */
     public function setPaperSize($paperSize)
     {
-        $this->paperSize = $paperSize;
+        $this->options->setDefaultPaperSize($paperSize);
         return $this;
     }
 }
