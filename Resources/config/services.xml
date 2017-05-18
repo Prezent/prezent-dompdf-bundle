@@ -6,11 +6,11 @@
 
     <services>
 
-        <service id="dompdf" class="Prezent\DompdfBundle\Creator\Html">
+        <service id="dompdf" class="LoungeRoom\DompdfBundle\Creator\Html">
             <call method="initialize"/>
         </service>
 
-        <service id="dompdf.twig" class="Prezent\DompdfBundle\Creator\Twig">
+        <service id="dompdf.twig" class="LoungeRoom\DompdfBundle\Creator\Twig">
             <argument type="service" id="templating" />
             <call method="initialize"/>
         </service>

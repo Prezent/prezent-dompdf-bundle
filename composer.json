@@ -3,7 +3,7 @@
   "type": "symfony-bundle",
   "description": "Integrates the Dompdf (0.8) library into a Symfony2 application",
   "keywords": ["Dompdf", "pdf", "symfony", "bundle"],
-  "homepage": "http://www.prezent.nl",
+  "homepage": "http://www.loungeroom.nl",
   "require": {
     "php": ">=5.5.9",
     "dompdf/dompdf": "^0.8.0",
@@ -21,14 +21,10 @@
     {
       "name": "Robert-Jan Bijl",
       "email": "robert-jan@prezent.nl"
-    },
-    {
-      "name": "Prezent Internet B.V.",
-      "email": "github@prezent.nl"
     }
   ],
   "autoload": {
-    "psr-4": { "Prezent\\DompdfBundle\\": "" }
+    "psr-4": { "LoungeRoom\\DompdfBundle\\": "" }
   },
   "extra": {
     "branch-alias": {
