@@ -25,6 +25,11 @@ abstract class Creator implements CreatorInterface
     /**
      * @var string
      */
+    protected $configFile;
+
+    /**
+     * @var string
+     */
     protected $orientation = 'portrait';
 
     /**
@@ -41,9 +46,11 @@ abstract class Creator implements CreatorInterface
 
     /**
      * Constructor
+     * @param $configFile
      */
-    public function __construct()
+    public function __construct($configFile = null)
     {
+        $this->configFile = $configFile;
     }
 
     /**
@@ -103,6 +110,11 @@ abstract class Creator implements CreatorInterface
      * {@inheritDoc}
      */
     abstract public function render();
+
+    public function getOptions()
+    {
+        return $this->pdf->getOptions();
+    }
 
     /**
      * Stream the pdf document

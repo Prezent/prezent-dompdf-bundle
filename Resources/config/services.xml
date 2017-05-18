@@ -4,17 +4,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <services>
+    <parameters>
+        <parameter key="loungeroom_dompdf.config_location">%kernel.root_dir%/config/dompdf_config.inc.php</parameter>
+    </parameters>
 
+    <services>
         <service id="dompdf" class="LoungeRoom\DompdfBundle\Creator\Html">
+            <argument>%loungeroom_dompdf.config_location%</argument>
             <call method="initialize"/>
         </service>
 
         <service id="dompdf.twig" class="LoungeRoom\DompdfBundle\Creator\Twig">
+            <argument>%loungeroom_dompdf.config_location%</argument>
             <argument type="service" id="templating" />
             <call method="initialize"/>
         </service>
-
     </services>
 
 </container>
