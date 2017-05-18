@@ -21,7 +21,6 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('loungeroom_dompdf');
-
         $rootNode
             ->children()
             ->scalarNode('config_location')

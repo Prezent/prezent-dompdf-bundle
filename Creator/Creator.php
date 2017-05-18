@@ -117,7 +117,7 @@ abstract class Creator implements CreatorInterface
 
     public function getOptions()
     {
-        return $this->pdf->getOptions();
+        return $this->options;
     }
 
     /**

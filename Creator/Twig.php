@@ -36,7 +36,7 @@ class Twig extends Html implements CreatorInterface
     {
         $this->configFile = $configFile;
         $this->renderer = $renderer;
-        parent::__construct();
+        parent::__construct($configFile);
     }
 
     /**
