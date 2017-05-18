@@ -1,6 +1,6 @@
 <?php
 
-namespace Prezent\DompdfBundle\Creator;
+namespace LoungeRoom\DompdfBundle\Creator;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;

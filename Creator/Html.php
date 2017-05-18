@@ -1,11 +1,13 @@
 <?php
 
-namespace Prezent\DompdfBundle\Creator;
+namespace LoungeRoom\DompdfBundle\Creator;
+
 use Dompdf\Dompdf;
 
 /**
  * Class to create a PDF document from an HTML string
  *
+ * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
 class Html extends Creator implements CreatorInterface

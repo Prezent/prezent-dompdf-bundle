@@ -1,6 +1,6 @@
 <?php
 
-namespace Prezent\DompdfBundle\Creator;
+namespace LoungeRoom\DompdfBundle\Creator;
 
 /**
  * Class to create PDF document from an HTML string
