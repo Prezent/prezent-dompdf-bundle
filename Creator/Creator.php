@@ -60,6 +60,10 @@ abstract class Creator implements CreatorInterface
      */
     public function initialize()
     {
+        if (file_exists($this->configFile)) {
+            require_once $this->configFile;
+        }
+
         $this->pdf = new Dompdf();
         $this->options = $this->pdf->getOptions();
 
