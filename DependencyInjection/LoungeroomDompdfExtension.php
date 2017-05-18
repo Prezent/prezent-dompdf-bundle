@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class LoungeRoomDompdfExtension extends Extension
+class LoungeroomDompdfExtension extends Extension
 {
     /**
      * {@inheritDoc}

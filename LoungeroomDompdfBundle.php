@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class LoungeRoomDompdfBundle extends Bundle
+class LoungeroomDompdfBundle extends Bundle
 {
 
 }
