@@ -29,13 +29,12 @@ class Twig extends Html implements CreatorInterface
     /**
      * Constructor
      *
-     * @param string $configFile
      * @param TwigEngine $renderer
      */
-    public function __construct($configFile, TwigEngine $renderer)
+    public function __construct(TwigEngine $renderer)
     {
         $this->renderer = $renderer;
-        parent::__construct($configFile);
+        parent::__construct();
     }
 
     /**

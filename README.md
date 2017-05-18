@@ -24,13 +24,6 @@ public function registerBundles()
 }
 ```
 
-After this, copy the file ```Resources/files/dompdf_config.inc.php``` to the ```app/config``` directory of your project.
-Change the setting to suit your specific configuration. You can also change the default Dompdf settings in this file.
-
 ## Configuration
-You can set a custom location for the configuration file:
-
-```yml
-prezent_dompdf:
-    config_location: locationOfTheConfigFile 
-```
+Since Dompdf 0.7.0, settings in the `dompdf_config.inc.php` are no longer supported. 
+Set your options at runtime.

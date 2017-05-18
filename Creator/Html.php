@@ -1,6 +1,7 @@
 <?php
 
 namespace Prezent\DompdfBundle\Creator;
+use Dompdf\Dompdf;
 
 /**
  * Class to create a PDF document from an HTML string
@@ -23,11 +24,9 @@ class Html extends Creator implements CreatorInterface
             throw new \RuntimeException('You need to set the HTML, before rendering a PDF');
         }
 
-        if (null === $this->paperSize) {
-            $this->paperSize = DOMPDF_DEFAULT_PAPER_SIZE;
-        }
-
+        $this->pdf = new Dompdf();
         $this->pdf->setPaper($this->paperSize, $this->orientation);
+        //$this->pdf->
         $this->pdf->loadHtml($this->html);
         $this->pdf->render();
 

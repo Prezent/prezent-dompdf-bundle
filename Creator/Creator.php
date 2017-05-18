@@ -19,17 +19,12 @@ abstract class Creator implements CreatorInterface
     /**
      * @var string
      */
-    protected $configFile;
-
-    /**
-     * @var string
-     */
     protected $orientation = 'portrait';
 
     /**
      * @var string
      */
-    protected $paperSize;
+    protected $paperSize = 'a4';
 
     /**
      * Whether or not the pdf is rendered
@@ -40,30 +35,24 @@ abstract class Creator implements CreatorInterface
 
     /**
      * Constructor
-     *
-     * @param string $configFile
      */
-    public function __construct($configFile)
+    public function __construct()
     {
-        $this->configFile = $configFile;
+        // legacy 0.6.2 support
+        if (defined('DOMPDF_DEFAULT_PAPER_SIZE')) {
+            $this->paperSize = DOMPDF_DEFAULT_PAPER_SIZE;
+        }
+
     }
 
     /**
      * Initialize the configuration
      *
-     * @throws \RuntimeException If the configfile does not exist
      * @return true
      */
     public function initialize()
     {
-        if (file_exists($this->configFile)) {
-            require_once $this->configFile;
-        } else {
-            throw new \RuntimeException(sprintf('Could not find config file "%s"', $this->configFile));
-        }
-
         $this->pdf = new Dompdf();
-
         return true;
     }
 
