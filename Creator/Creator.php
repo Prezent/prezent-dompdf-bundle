@@ -64,8 +64,7 @@ abstract class Creator implements CreatorInterface
             require_once $this->configFile;
         }
 
-        $this->pdf = new Dompdf();
-        $this->options = $this->pdf->getOptions();
+        $this->options = new Options();
 
         // legacy 0.6.2 support, WARNING: not all old properties are supported
         if (defined('DOMPDF_CHROOT')) {
@@ -115,6 +114,9 @@ abstract class Creator implements CreatorInterface
      */
     abstract public function render();
 
+    /**
+     * @return Options
+     */
     public function getOptions()
     {
         return $this->options;
