@@ -23,7 +23,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new LoungeRoom\DompdfBundle\LoungeRoomDompdfBundle(),
+        new LoungeRoom\DompdfBundle\LoungeroomDompdfBundle(),
     );
 }
 ```

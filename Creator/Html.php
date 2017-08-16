@@ -10,7 +10,7 @@ use Dompdf\Dompdf;
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class Html extends Creator implements CreatorInterface
+class Html extends Creator
 {
     /**
      * @var string
