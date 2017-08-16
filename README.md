@@ -1,10 +1,9 @@
 # prezent/dompdf-bundle
 
-Integrates [Dompdf](https://github.com/dompdf/dompdf) into a Symfony project, forked from [prezent/dompdf-bundle](https://github.com/Prezent/prezent-dompdf-bundle).
+Integrates [Dompdf](https://github.com/dompdf/dompdf) into a Symfony project.
 
 ## Note
-If you're looking to use **DomPDF 0.6.2** or older, see the [dompdf-bundle by Prezent](https://github.com/Prezent/prezent-dompdf-bundle). 
-This is just an adapted fork to work with DomPDF 0.8.0. All credits go to [Prezent](http://www.prezent.nl).
+If you're looking to use **DomPDF 0.6.2** or older, use the latest 1.x version of this bundle.
 
 ## Installation
 This bundle can be installed using Composer:
