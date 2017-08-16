@@ -9,6 +9,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * Bundle configuration
  *
  * @see ConfigurationInterface
+ * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
 class Configuration implements ConfigurationInterface
@@ -20,10 +21,9 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('prezent_dompdf');
-
         $rootNode
             ->children()
-                ->scalarNode('config_location')
+            ->scalarNode('config_location')
             ->end()
         ;
 

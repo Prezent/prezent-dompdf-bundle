@@ -1,13 +1,13 @@
 {
   "name": "prezent/dompdf-bundle",
   "type": "symfony-bundle",
-  "description": "Integrates the DOMPDF library into a Symfony2 application",
-  "keywords": ["DOMPDF", "pdf", "symfony", "bundle"],
-  "homepage": "http://www.prezent.nl",
+  "description": "Integrates the Dompdf (0.8) library into a Symfony application",
+  "keywords": ["Dompdf", "pdf", "symfony", "bundle"],
+  "homepage": "http://www.loungeroom.nl",
   "require": {
     "php": ">=5.5.9",
-    "dompdf/dompdf": "~0.6",
-    "symfony/framework-bundle": "~2.3"
+    "dompdf/dompdf": "^0.8.0",
+    "symfony/framework-bundle": "^2.3|^3.0"
   },
   "suggest": {
     "symfony/twig-bundle": "To render a PDF using a Twig template"
@@ -15,12 +15,16 @@
   "license": "MIT",
   "authors": [
     {
+      "name": "Prezent Internet BV",
+      "email": "github@prezent.nl"
+    },
+    {
       "name": "Robert-Jan Bijl",
       "email": "robert-jan@prezent.nl"
     },
     {
-      "name": "Prezent Internet B.V.",
-      "email": "github@prezent.nl"
+      "name": "Terry Duivesteijn",
+      "email": "terry@loungeroom.nl"
     }
   ],
   "autoload": {
@@ -28,7 +32,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "2.0.x-dev"
     }
   }
 }

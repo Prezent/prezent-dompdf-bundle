@@ -9,7 +9,7 @@ use Symfony\Bridge\Twig\TwigEngine;
  *
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class Twig extends Html implements CreatorInterface
+class Twig extends Html
 {
     /**
      * @var TwigEngine
@@ -32,8 +32,9 @@ class Twig extends Html implements CreatorInterface
      * @param string $configFile
      * @param TwigEngine $renderer
      */
-    public function __construct($configFile, TwigEngine $renderer)
+    public function __construct($configFile = null, TwigEngine $renderer)
     {
+        $this->configFile = $configFile;
         $this->renderer = $renderer;
         parent::__construct($configFile);
     }

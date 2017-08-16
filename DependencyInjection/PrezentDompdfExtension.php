@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  * Load the bundle configuration
  *
  * @see Extension
+ *
+ * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
 class PrezentDompdfExtension extends Extension
@@ -29,6 +31,7 @@ class PrezentDompdfExtension extends Extension
         if (isset($config{'config_location'})) {
             $container->setParameter('prezent_dompdf.config_location', $config['config_location']);
         }
+
     }
 
     public function getAlias()
