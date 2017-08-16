@@ -5,17 +5,17 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="loungeroom_dompdf.config_location">%kernel.root_dir%/config/dompdf_config.inc.php</parameter>
+        <parameter key="prezent_dompdf.config_location">%kernel.root_dir%/config/dompdf_config.inc.php</parameter>
     </parameters>
 
     <services>
-        <service id="dompdf" class="LoungeRoom\DompdfBundle\Creator\Html">
-            <argument>%loungeroom_dompdf.config_location%</argument>
+        <service id="dompdf" class="Prezent\DompdfBundle\Creator\Html">
+            <argument>%prezent_dompdf.config_location%</argument>
             <call method="initialize"/>
         </service>
 
-        <service id="dompdf.twig" class="LoungeRoom\DompdfBundle\Creator\Twig">
-            <argument>%loungeroom_dompdf.config_location%</argument>
+        <service id="dompdf.twig" class="Prezent\DompdfBundle\Creator\Twig">
+            <argument>%prezent_dompdf.config_location%</argument>
             <argument type="service" id="templating" />
             <call method="initialize"/>
         </service>

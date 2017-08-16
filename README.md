@@ -10,7 +10,7 @@ This is just an adapted fork to work with DomPDF 0.8.0. All credits go to [Preze
 This bundle can be installed using Composer:
 
 ```bash
-$ php composer.phar require loungeroom/dompdf-bundle
+$ php composer.phar require prezent/dompdf-bundle
 ```
 
 Then, activate the bundle in your kernel:
@@ -23,7 +23,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new LoungeRoom\DompdfBundle\LoungeroomDompdfBundle(),
+        new Prezent\DompdfBundle\PrezentDompdfBundle(),
     );
 }
 ```

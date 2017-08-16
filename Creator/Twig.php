@@ -1,6 +1,6 @@
 <?php
 
-namespace LoungeRoom\DompdfBundle\Creator;
+namespace Prezent\DompdfBundle\Creator;
 
 use Symfony\Bridge\Twig\TwigEngine;
 

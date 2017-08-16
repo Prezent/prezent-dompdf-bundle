@@ -1,6 +1,6 @@
 <?php
 
-namespace LoungeRoom\DompdfBundle\DependencyInjection;
+namespace Prezent\DompdfBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class LoungeroomDompdfExtension extends Extension
+class PrezentDompdfExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -29,13 +29,13 @@ class LoungeroomDompdfExtension extends Extension
         $loader->load('services.xml');
 
         if (isset($config{'config_location'})) {
-            $container->setParameter('loungeroom_dompdf.config_location', $config['config_location']);
+            $container->setParameter('prezent_dompdf.config_location', $config['config_location']);
         }
 
     }
 
     public function getAlias()
     {
-        return 'loungeroom_dompdf';
+        return 'prezent_dompdf';
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace LoungeRoom\DompdfBundle;
+namespace Prezent\DompdfBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class LoungeroomDompdfBundle extends Bundle
+class PrezentDompdfBundle extends Bundle
 {
 
 }

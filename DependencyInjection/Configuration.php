@@ -1,6 +1,6 @@
 <?php
 
-namespace LoungeRoom\DompdfBundle\DependencyInjection;
+namespace Prezent\DompdfBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('loungeroom_dompdf');
+        $rootNode = $treeBuilder->root('prezent_dompdf');
         $rootNode
             ->children()
             ->scalarNode('config_location')

@@ -15,16 +15,20 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Terry Duivesteijn",
-      "email": "terry@loungeroom.nl"
+      "name": "Prezent Internet BV",
+      "email": "github@prezent.nl"
     },
     {
       "name": "Robert-Jan Bijl",
       "email": "robert-jan@prezent.nl"
+    },
+    {
+      "name": "Terry Duivesteijn",
+      "email": "terry@loungeroom.nl"
     }
   ],
   "autoload": {
-    "psr-4": { "LoungeRoom\\DompdfBundle\\": "" }
+    "psr-4": { "Prezent\\DompdfBundle\\": "" }
   },
   "extra": {
     "branch-alias": {
