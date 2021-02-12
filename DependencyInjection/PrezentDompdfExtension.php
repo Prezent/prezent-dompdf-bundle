@@ -28,7 +28,7 @@ class PrezentDompdfExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        if (isset($config{'config_location'})) {
+        if (isset($config['config_location'])) {
             $container->setParameter('prezent_dompdf.config_location', $config['config_location']);
         }
 
