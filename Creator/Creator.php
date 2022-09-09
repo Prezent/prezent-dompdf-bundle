@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezent\DompdfBundle\Creator;
 
 use Dompdf\Dompdf;
@@ -12,53 +14,30 @@ use Dompdf\Options;
  */
 abstract class Creator implements CreatorInterface
 {
-    /**
-     * @var Dompdf
-     */
-    protected $pdf;
+    protected Dompdf $pdf;
+
+    protected Options $options;
+
+    protected ?string $configFile;
+
+    protected string $orientation = 'portrait';
+
+    protected string $paperSize = 'a4';
 
     /**
-     * @var Options
+     * Whether the pdf is rendered
      */
-    protected $options;
+    protected bool $rendered = false;
 
-    /**
-     * @var string
-     */
-    protected $configFile;
-
-    /**
-     * @var string
-     */
-    protected $orientation = 'portrait';
-
-    /**
-     * @var string
-     */
-    protected $paperSize = 'a4';
-
-    /**
-     * Whether or not the pdf is rendered
-     *
-     * @var bool
-     */
-    protected $rendered = false;
-
-    /**
-     * Constructor
-     * @param $configFile
-     */
-    public function __construct($configFile = null)
+    public function __construct(?string $configFile = null)
     {
         $this->configFile = $configFile;
     }
 
     /**
      * Initialize the configuration
-     *
-     * @return true
      */
-    public function initialize()
+    public function initialize(): void
     {
         if (file_exists($this->configFile)) {
             require_once $this->configFile;
@@ -106,44 +85,39 @@ abstract class Creator implements CreatorInterface
         if (defined('DOMPDF_FONT_HEIGHT_RATIO')) {
             $this->options->setFontHeightRatio(DOMPDF_FONT_HEIGHT_RATIO);
         }
-        return true;
     }
 
     /**
      * {@inheritDoc}
      */
-    abstract public function render();
+    abstract public function render(): void;
 
     /**
      * @return Options
      */
-    public function getOptions()
+    public function getOptions(): Options
     {
         return $this->options;
     }
 
     /**
-     * Stream the pdf document
+     * Stream the pdf document
      *
-     * @param  string $fileName The name of the document
-     * @return bool
+     * @param string $fileName The name of the document
      */
-    public function stream($fileName)
+    public function stream(string $fileName): void
     {
         if (!$this->rendered) {
             $this->render();
         }
 
         $this->pdf->stream($fileName);
-        return true;
     }
 
     /**
      * Get the raw pdf output
-     *
-     * @return string
      */
-    public function output()
+    public function output(): string
     {
         if (!$this->rendered) {
             $this->render();
@@ -154,45 +128,37 @@ abstract class Creator implements CreatorInterface
 
     /**
      * Getter for orientation
-     *
-     * @return string
      */
-    public function getOrientation()
+    public function getOrientation(): string
     {
         return $this->options->getDefaultPaperOrientation();
     }
 
     /**
      * Setter for orientation
-     *
-     * @param string $orientation
-     * @return self
      */
-    public function setOrientation($orientation)
+    public function setOrientation(string $orientation): self
     {
         $this->options->setDefaultPaperOrientation($orientation);
+
         return $this;
     }
 
     /**
      * Getter for paperSize
-     *
-     * @return string
      */
-    public function getPaperSize()
+    public function getPaperSize(): string
     {
         return $this->options->getDefaultPaperSize();
     }
 
     /**
      * Setter for paperSize
-     *
-     * @param string $paperSize
-     * @return self
      */
-    public function setPaperSize($paperSize)
+    public function setPaperSize(string $paperSize): self
     {
         $this->options->setDefaultPaperSize($paperSize);
+
         return $this;
     }
 }

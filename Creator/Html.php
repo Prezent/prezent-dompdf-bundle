@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezent\DompdfBundle\Creator;
 
 use Dompdf\Dompdf;
@@ -12,15 +14,12 @@ use Dompdf\Dompdf;
  */
 class Html extends Creator
 {
-    /**
-     * @var string
-     */
-    protected $html = null;
+    protected ?string $html = null;
 
     /**
      * {@inheritDoc}
      */
-    public function render()
+    public function render(): void
     {
         if (null === $this->html) {
             throw new \RuntimeException('You need to set the HTML, before rendering a PDF');
@@ -32,29 +31,23 @@ class Html extends Creator
         $this->pdf = new Dompdf($this->options);
         $this->pdf->loadHtml($this->html);
         $this->pdf->render();
-
-        return true;
     }
 
     /**
      * Getter for html
-     *
-     * @return string
      */
-    public function getHtml()
+    public function getHtml(): ?string
     {
         return $this->html;
     }
 
     /**
      * Setter for html
-     *
-     * @param string $html
-     * @return self
      */
-    public function setHtml($html)
+    public function setHtml(string $html): self
     {
         $this->html = $html;
+
         return $this;
     }
 }

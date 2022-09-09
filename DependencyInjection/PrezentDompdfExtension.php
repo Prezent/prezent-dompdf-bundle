@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezent\DompdfBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,17 +12,15 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 /**
  * Load the bundle configuration
  *
- * @see Extension
- *
  * @author Terry Duivesteijn <terry@loungeroom.nl>
  * @author Robert-Jan Bijl <robert-jan@prezent.nl>
  */
-class PrezentDompdfExtension extends Extension
+final class PrezentDompdfExtension extends Extension
 {
     /**
      * {@inheritDoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -34,7 +34,7 @@ class PrezentDompdfExtension extends Extension
 
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'prezent_dompdf';
     }

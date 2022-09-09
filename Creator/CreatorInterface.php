@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezent\DompdfBundle\Creator;
 
 /**
@@ -11,23 +13,20 @@ interface CreatorInterface
 {
     /**
      * Render the PDF document
-     *
-     * @return bool
      */
-    public function render();
+    public function render(): void;
 
     /**
-     * Stream the pdf document
+     * Streamthe pdf document
      *
      * @param  string $fileName The name of the document
-     * @return bool
      */
-    public function stream($fileName);
+    public function stream(string $fileName) : void;
 
     /**
      * Get the raw pdf output
      *
      * @return string
      */
-    public function output();
+    public function output(): string;
 }

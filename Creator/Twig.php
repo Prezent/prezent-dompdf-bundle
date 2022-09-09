@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezent\DompdfBundle\Creator;
 
-use Symfony\Bridge\Twig\TwigEngine;
+use Twig\Environment;
 
 /**
  * Class to create a PDF document from a Twig template
@@ -11,45 +13,36 @@ use Symfony\Bridge\Twig\TwigEngine;
  */
 class Twig extends Html
 {
-    /**
-     * @var TwigEngine
-     */
-    private $renderer;
+    private Environment $twig;
+
+    private ?string $template = null;
 
     /**
-     * @var string
+     * @var array<string, mixed>
      */
-    private $template;
-
-    /**
-     * @var array
-     */
-    private $templateData = [];
+    private array $templateData = [];
 
     /**
      * Constructor
-     *
-     * @param string $configFile
-     * @param TwigEngine $renderer
      */
-    public function __construct($configFile = null, TwigEngine $renderer)
+    public function __construct(Environment $twig, ?string $configFile = null)
     {
-        $this->configFile = $configFile;
-        $this->renderer = $renderer;
+        $this->twig = $twig;
+
         parent::__construct($configFile);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function render()
+    public function render(): void
     {
         // check if the template exists and is readable
-        if (!$this->renderer->exists($this->template)) {
+        if (!$this->twig->getLoader()->exists($this->template)) {
             throw new \RuntimeException(sprintf('Template "%s" does not exist', $this->template));
         }
 
-        $html = $this->renderer->render($this->template, $this->templateData);
+        $html = $this->twig->render($this->template, $this->templateData);
         $this->setHtml($html);
 
         parent::render();
@@ -57,25 +50,23 @@ class Twig extends Html
 
     /**
      * Setter for template
-     *
-     * @param string $template
-     * @return self
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template): self
     {
         $this->template = $template;
+
         return $this;
     }
 
     /**
      * Setter for templateData
      *
-     * @param array $templateData
-     * @return self
+     * @param array<string, mixed> $templateData
      */
-    public function setTemplateData(array $templateData)
+    public function setTemplateData(array $templateData): self
     {
         $this->templateData = $templateData;
+
         return $this;
     }
 }
