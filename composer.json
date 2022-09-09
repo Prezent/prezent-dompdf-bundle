@@ -3,11 +3,11 @@
   "type": "symfony-bundle",
   "description": "Integrates the Dompdf (0.8) library into a Symfony application",
   "keywords": ["Dompdf", "pdf", "symfony", "bundle"],
-  "homepage": "http://www.loungeroom.nl",
+  "homepage": "https://www.prezent.nl",
   "require": {
-    "php": ">=5.5.9",
-    "dompdf/dompdf": "^0.8.0",
-    "symfony/framework-bundle": "^2.3|^3.0"
+    "php": ">=7.4",
+    "dompdf/dompdf": "^2.0",
+    "symfony/framework-bundle": "^4.4|^5.4|^6.0",
   },
   "suggest": {
     "symfony/twig-bundle": "To render a PDF using a Twig template"
@@ -32,7 +32,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0.x-dev"
+      "dev-master": "3.0.x-dev"
     }
   }
 }
