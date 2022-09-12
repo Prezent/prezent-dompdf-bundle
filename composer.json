@@ -1,7 +1,7 @@
 {
   "name": "prezent/dompdf-bundle",
   "type": "symfony-bundle",
-  "description": "Integrates the Dompdf (0.8) library into a Symfony application",
+  "description": "Integrates the dompdf library into a Symfony application",
   "keywords": ["Dompdf", "pdf", "symfony", "bundle"],
   "homepage": "https://www.prezent.nl",
   "require": {
