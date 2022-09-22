@@ -18,8 +18,8 @@
 
         <service id="dompdf.twig" alias="Prezent\DompdfBundle\Creator\Twig"/>
         <service id="Prezent\DompdfBundle\Creator\Twig">
+            <argument type="service" id="twig"/>
             <argument>%prezent_dompdf.config_location%</argument>
-            <argument type="service" id="templating"/>
             <call method="initialize"/>
         </service>
 
